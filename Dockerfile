@@ -2,6 +2,8 @@ FROM mbe1224/confluent-osp-base:jesse-slim-8u144-2.11.11-3.2.2
 
 EXPOSE 2181 2888 3888
 
+ENV CONFLUENT_DEB_VERSION="2"
+
 ENV COMPONENT=zookeeper
 
 RUN echo "===> installing ${COMPONENT}..." \
