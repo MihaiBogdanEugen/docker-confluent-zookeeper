@@ -62,7 +62,7 @@ One can use the following environment variables for configuring the ZooKeeper no
 |---|---|---|---|---|
 | 1 | KAFKA\_JMX\_OPTS | - | JMX options used for monitoring | KAFKA_OPTS should contain 'com.sun.management.jmxremote.rmi.port' property |
 | 2 | ZOOKEEPER\_CLIENT\_PORT | 2181  | The port to listen for client connections | - |
-| 3 | ZOOKEEPER\_GROUPS | - | Semicolo separated list of indexed group identifiers used for forming hierarchical quorums | Optional, used in ZooKeeper replicated scenarios |
+| 3 | ZOOKEEPER\_GROUPS | - | Semicolon separated list of indexed group identifiers used for forming hierarchical quorums | Optional, used in ZooKeeper replicated scenarios |
 | 4 | ZOOKEEPER\_INIT\_LIMIT | 10 | Timeouts ZooKeeper uses to limit the length of time the ZooKeeper servers in quorum have to connect to a leader | - |
 | 5 | ZOOKEEPER\_LOG4J\_LOGGERS | - | - | - |
 | 6 | ZOOKEEPER\_LOG4J\_ROOT\_LOGLEVEL | INFO | - | - |
