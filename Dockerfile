@@ -27,7 +27,3 @@ RUN echo "===> installing ${COMPONENT}..." \
 VOLUME ["/var/lib/${COMPONENT}/data", "/var/lib/${COMPONENT}/log", "/etc/${COMPONENT}/secrets"]
 
 CMD ["/etc/confluent/docker/run"]
-
-
-
-
