@@ -1,11 +1,11 @@
-# [Confluent Open Source Platform] base [ZooKeeper] Docker image using [Oracle JDK] #
+# [Confluent Open Source Platform](https://www.confluent.io/product/confluent-open-source/) [ZooKeeper] Docker image using [Oracle JDK] #
 
 ### Supported tags and respective Dockerfile links: ###
 
 * ```jesse-slim-8u144-2.11.11-3.2.2``` _\([jesse-slim-8u144-2.11.11-3.2.2/Dockerfile]\)_
-[![](https://images.microbadger.com/badges/image/mbe1224/confluent-osp-zookeeper:jesse-slim-8u144-2.11.11-3.2.2.svg)](https://microbadger.com/images/mbe1224/confluent-osp-zookeeper:jesse-slim-8u144-2.11.11-3.2.2 "")
+[![](https://images.microbadger.com/badges/image/mbe1224/confluent-osp-zookeeper:jesse-slim-8u144-2.11.11-3.2.2.svg)](https://microbadger.com/images/mbe1224/confluent-osp-zookeeper:jesse-slim-8u144-2.11.11-3.2.2)
 * ```jesse-slim-8u144-2.11.11-3.3.0```, ```latest``` _\([jesse-slim-8u144-2.11.11-3.3.0/Dockerfile]\)_
-[![](https://images.microbadger.com/badges/image/mbe1224/confluent-osp-zookeeper:jesse-slim-8u144-2.11.11-3.3.0.svg)](https://microbadger.com/images/mbe1224/confluent-osp-zookeeper:jesse-slim-8u144-2.11.11-3.3.0 "")
+[![](https://images.microbadger.com/badges/image/mbe1224/confluent-osp-zookeeper:jesse-slim-8u144-2.11.11-3.3.0.svg)](https://microbadger.com/images/mbe1224/confluent-osp-zookeeper:jesse-slim-8u144-2.11.11-3.3.0)
 
 #### All tag names follow the naming convention: ####
 
@@ -60,7 +60,7 @@ One can use the following environment variables for configuring the ZooKeeper no
 
 | # | Name | Default value | Meaning | Comments |
 |---|---|---|---|---|
-| 1 | KAFKA\_JMX\_OPTS | - | JMX options used for monitoring | KAFKA_OPTS should contain 'com.sun.management.jmxremote.rmi.port' property |
+| 1 | KAFKA\_JMX\_OPTS | - | JMX options used for monitoring | KAFKA\_OPTS should contain 'com.sun.management.jmxremote.rmi.port' property |
 | 2 | ZOOKEEPER\_CLIENT\_PORT | 2181  | The port to listen for client connections | - |
 | 3 | ZOOKEEPER\_GROUPS | - | Semicolon separated list of indexed group identifiers used for forming hierarchical quorums | Optional, used in ZooKeeper replicated scenarios |
 | 4 | ZOOKEEPER\_INIT\_LIMIT | 10 | Timeouts ZooKeeper uses to limit the length of time the ZooKeeper servers in quorum have to connect to a leader | - |
