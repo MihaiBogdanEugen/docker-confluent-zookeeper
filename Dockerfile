@@ -1,8 +1,8 @@
 FROM mbe1224/confluent-osp-base:jesse-slim-8u144-2.11.11-3.3.0
 
-EXPOSE 2181 2888 3888
-
 ENV COMPONENT=zookeeper
+
+EXPOSE 2181 2888 3888
 
 RUN echo "===> installing ${COMPONENT}..." \
     && apt-get update && apt-get install -y confluent-kafka-${SCALA_VERSION}=${KAFKA_VERSION}${CONFLUENT_PLATFORM_LABEL}-${CONFLUENT_DEB_VERSION} \
