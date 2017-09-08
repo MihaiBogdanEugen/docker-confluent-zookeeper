@@ -1,4 +1,4 @@
-FROM mbe1224/confluent-osp-base:jesse-slim-8u144-2.11.11-3.3.0
+FROM mbe1224/confluent-osp-base:jesse-slim-8u144-2.11.11-3.2.2
 
 EXPOSE 2181 2888 3888
 
@@ -11,14 +11,14 @@ RUN echo "===> installing ${COMPONENT}..." \
     && echo "===> Setting up ${COMPONENT} dirs" \
     && mkdir -p /var/lib/${COMPONENT}/data /var/lib/${COMPONENT}/log /etc/${COMPONENT}/secrets /etc/confluent/docker \
     && chmod -R ag+w /etc/kafka /var/lib/${COMPONENT}/data /var/lib/${COMPONENT}/log /etc/${COMPONENT}/secrets \
-    && wget "https://github.com/confluentinc/cp-docker-images/blob/71fabd107216be2be86aea2b95371cdea4abde95/debian/zookeeper/include/etc/confluent/docker/configure" -O "/etc/confluent/docker/configure" \
-    && wget "https://github.com/confluentinc/cp-docker-images/blob/71fabd107216be2be86aea2b95371cdea4abde95/debian/zookeeper/include/etc/confluent/docker/ensure" -O "/etc/confluent/docker/ensure" \
-    && wget "https://github.com/confluentinc/cp-docker-images/blob/71fabd107216be2be86aea2b95371cdea4abde95/debian/zookeeper/include/etc/confluent/docker/launch" -O "/etc/confluent/docker/launch" \
-    && wget "https://github.com/confluentinc/cp-docker-images/blob/71fabd107216be2be86aea2b95371cdea4abde95/debian/zookeeper/include/etc/confluent/docker/log4j.properties.template" -O "/etc/confluent/docker/log4j.properties.template" \
-    && wget "https://github.com/confluentinc/cp-docker-images/blob/71fabd107216be2be86aea2b95371cdea4abde95/debian/zookeeper/include/etc/confluent/docker/myid.template" -O "/etc/confluent/docker/myid.template" \
-    && wget "https://github.com/confluentinc/cp-docker-images/blob/71fabd107216be2be86aea2b95371cdea4abde95/debian/zookeeper/include/etc/confluent/docker/run" -O "/etc/confluent/docker/run" \
-    && wget "https://github.com/confluentinc/cp-docker-images/blob/71fabd107216be2be86aea2b95371cdea4abde95/debian/zookeeper/include/etc/confluent/docker/tools-log4j.properties.template" -O "/etc/confluent/docker/tools-log4j.properties.template" \
-    && wget "https://github.com/confluentinc/cp-docker-images/blob/71fabd107216be2be86aea2b95371cdea4abde95/debian/zookeeper/include/etc/confluent/docker/zookeeper.properties.template" -O "/etc/confluent/docker/zookeeper.properties.template" \
+    && wget "https://raw.githubusercontent.com/confluentinc/cp-docker-images/3c2c457e275a66f327868466dfa000a8ee3c0114/debian/zookeeper/include/etc/confluent/docker/configure" -O "/etc/confluent/docker/configure" \
+    && wget "https://raw.githubusercontent.com/confluentinc/cp-docker-images/3c2c457e275a66f327868466dfa000a8ee3c0114/debian/zookeeper/include/etc/confluent/docker/ensure" -O "/etc/confluent/docker/ensure" \
+    && wget "https://raw.githubusercontent.com/confluentinc/cp-docker-images/3c2c457e275a66f327868466dfa000a8ee3c0114/debian/zookeeper/include/etc/confluent/docker/launch" -O "/etc/confluent/docker/launch" \
+    && wget "https://raw.githubusercontent.com/confluentinc/cp-docker-images/3c2c457e275a66f327868466dfa000a8ee3c0114/debian/zookeeper/include/etc/confluent/docker/log4j.properties.template" -O "/etc/confluent/docker/log4j.properties.template" \
+    && wget "https://raw.githubusercontent.com/confluentinc/cp-docker-images/3c2c457e275a66f327868466dfa000a8ee3c0114/debian/zookeeper/include/etc/confluent/docker/myid.template" -O "/etc/confluent/docker/myid.template" \
+    && wget "https://raw.githubusercontent.com/confluentinc/cp-docker-images/3c2c457e275a66f327868466dfa000a8ee3c0114/debian/zookeeper/include/etc/confluent/docker/run" -O "/etc/confluent/docker/run" \
+    && wget "https://raw.githubusercontent.com/confluentinc/cp-docker-images/3c2c457e275a66f327868466dfa000a8ee3c0114/debian/zookeeper/include/etc/confluent/docker/tools-log4j.properties.template" -O "/etc/confluent/docker/tools-log4j.properties.template" \
+    && wget "https://raw.githubusercontent.com/confluentinc/cp-docker-images/3c2c457e275a66f327868466dfa000a8ee3c0114/debian/zookeeper/include/etc/confluent/docker/zookeeper.properties.template" -O "/etc/confluent/docker/zookeeper.properties.template" \
     && chmod a+x "/etc/confluent/docker/configure" \
     && chmod a+x "/etc/confluent/docker/ensure" \
     && chmod a+x "/etc/confluent/docker/launch" \
