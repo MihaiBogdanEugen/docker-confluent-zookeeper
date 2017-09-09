@@ -23,7 +23,7 @@
 - SHA 256 sum checks for all downloads
 - JAVA\_HOME and SCALA\_HOME environment variables set up
 - Utility scripts added:
-    - [Confluent utility belt script ('cub')]
+    - [Confluent utility belt script ('cub')] - a Python CLI for a Confluent tool called [docker-utils]
     - [Docker utility belt script ('dub')]
 - [Apache ZooKeeper] added
 
@@ -106,6 +106,7 @@ For more information, check the [Apache ZooKeeper's Official Documentation].
 * [Apache License]
 * [Oracle Binary Code License Agreement]
 
+   [docker-utils]: <https://github.com/confluentinc/cp-docker-images/tree/master/java>
    [Confluent Open Source Platform]: <https://www.confluent.io/product/confluent-open-source/>
    [Apache ZooKeeper]: <https://zookeeper.apache.org/>   
    [Apache ZooKeeper's Official Documentation]: <http://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html>
