@@ -1,4 +1,4 @@
-FROM mbe1224/confluent-osp-base:jesse-slim-8u144-2.11.11-3.3.0
+FROM mbe1224/confluent-osp-base:latest
 
 ENV COMPONENT=zookeeper
 
