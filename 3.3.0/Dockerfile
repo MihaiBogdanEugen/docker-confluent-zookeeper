@@ -1,8 +1,8 @@
-FROM mbe1224/confluent-osp-base:latest
-
-EXPOSE 2181 2888 3888
+FROM mbe1224/confluent-platform-base:3.3.0
 
 ENV COMPONENT=zookeeper
+
+EXPOSE 2181 2888 3888
 
 RUN echo "===> installing ${COMPONENT}..." \
     && apt-get update && apt-get install -y confluent-kafka-${SCALA_VERSION}=${KAFKA_VERSION}${CONFLUENT_PLATFORM_LABEL}-${CONFLUENT_DEB_VERSION} \
@@ -27,7 +27,3 @@ RUN echo "===> installing ${COMPONENT}..." \
 VOLUME ["/var/lib/${COMPONENT}/data", "/var/lib/${COMPONENT}/log", "/etc/${COMPONENT}/secrets"]
 
 CMD ["/etc/confluent/docker/run"]
-
-
-
-
