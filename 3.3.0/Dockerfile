@@ -1,4 +1,4 @@
-FROM mbe1224/confluent-platform-base:3.3.0
+FROM mbe1224/confluent-base:3.3.0
 
 ENV COMPONENT=zookeeper
 
