@@ -20,7 +20,9 @@
 - Utility scripts added:
     - [Confluent utility belt script ('cub')] - a Python CLI for a Confluent tool called [docker-utils]
     - [Docker utility belt script ('dub')]
-- [Apache ZooKeeper] 3.4.9 added
+- [Apache ZooKeeper] added:
+    - version 3.4.9 in ```3.2.2```
+    - version 3.4.10 in ```3.3.0``` and ```latest``` 
 
 ### Details: ### 
 
