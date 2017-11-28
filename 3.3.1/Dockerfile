@@ -1,4 +1,4 @@
-FROM mbe1224/confluent-base:3.2.2
+FROM mbe1224/confluent-base:3.3.1
 
 ENV COMPONENT=zookeeper
 

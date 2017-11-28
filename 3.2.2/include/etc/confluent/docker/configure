@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+set -o nounset \
+    -o errexit \
+    -o verbose \
+    -o xtrace
+
+
+dub ensure ZOOKEEPER_CLIENT_PORT
+
+dub path /etc/kafka/ writable
+
+# myid is required for clusters
+if [[ -n "${ZOOKEEPER_SERVERS-}" ]]
+then
+  if [[ -n "${IS_KUBERNETES-}" ]]
+  then
+    echo "Kubernetes setup"
+  else
+    dub ensure ZOOKEEPER_SERVER_ID
+  fi  
+  export ZOOKEEPER_INIT_LIMIT=${ZOOKEEPER_INIT_LIMIT:-"10"}
+  export ZOOKEEPER_SYNC_LIMIT=${ZOOKEEPER_SYNC_LIMIT:-"5"}
+fi
+
+if [[ -n "${ZOOKEEPER_SERVER_ID-}" ]] || [[ -n "${IS_KUBERNETES-}" ]]
+then
+  dub template "/etc/confluent/docker/myid.template" "/var/lib/${COMPONENT}/data/myid"
+fi
+
+if [[ -n "${KAFKA_JMX_OPTS-}" ]]
+then
+  if [[ ! $KAFKA_JMX_OPTS == *"com.sun.management.jmxremote.rmi.port"*  ]]
+  then
+    echo "KAFKA_OPTS should contain 'com.sun.management.jmxremote.rmi.port' property. It is required for accessing the JMX metrics externally."
+  fi
+fi
+
+dub template "/etc/confluent/docker/${COMPONENT}.properties.template" "/etc/kafka/${COMPONENT}.properties"
+dub template "/etc/confluent/docker/log4j.properties.template" "/etc/kafka/log4j.properties"
+dub template "/etc/confluent/docker/tools-log4j.properties.template" "/etc/kafka/tools-log4j.properties"
